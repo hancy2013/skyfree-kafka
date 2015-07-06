@@ -23,12 +23,12 @@ public class WordsProducer {
 
         /**
          * 需要说明的几点问题
-         * 1. 必须在运行java的机器上能够ping通broker,比如l-skyfree3.ops.dev.cn0与l-skyfree3.ops.dev.cn0.qunar.com的区别
+         * 1. 必须在运行java的机器上能够ping通broker,比如skyfree3, skyfree5, skyfree6的区别
          * 2. kafka配置中的host.name必须设定为对应的主机名，比如host.name=l-skyfree.ops.dev.cn0.qunar.com
          * 3. kafka配置中的zookeeper中的主机，也要再运行java的机器上联通，所以配置如下
-         *    zookeeper.connect=l-skyfree.ops.dev.cn0.qunar.com:2181,l-skyfree1.ops.dev.cn0.qunar.com:2181,l-skyfree2.ops.dev.cn0.qunar.com:2181
+         *    zookeeper.connect=skyfree:2181,skyfree1:2181,skyfree2:2181
          */
-        props.put("metadata.broker.list", "l-skyfree3.ops.dev.cn0.qunar.com:9092");
+        props.put("metadata.broker.list", "skyfree3:9092");
         props.put("serializer.class", "kafka.serializer.StringEncoder");
         props.put("request.required.acks", "1");
 
