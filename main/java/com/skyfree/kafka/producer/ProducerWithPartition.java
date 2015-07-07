@@ -1,4 +1,4 @@
-package com.skyfree.kafka;
+package com.skyfree.kafka.producer;
 
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;

@@ -59,7 +59,7 @@
                     <!--<includeProjectDependencies>true</includeProjectDependencies>-->
                     <!--<includePluginDependencies>false</includePluginDependencies>-->
                     <!--<classpathScope>compile</classpathScope>-->
-                    <!--<mainClass>com.skyfree.kafka.WordsProducer</mainClass>-->
+                    <!--<mainClass>com.skyfree.kafka.producer.WordsProducer</mainClass>-->
                 <!--</configuration>-->
             <!--</plugin>-->
         <!--</plugins>-->
