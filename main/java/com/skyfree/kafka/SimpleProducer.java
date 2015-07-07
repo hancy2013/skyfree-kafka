@@ -21,7 +21,21 @@ public class SimpleProducer implements Closeable {
     public SimpleProducer() {
         String brokers = "skyfree3:9092,skyfree5:9092,skyfree6:9092";
         Properties props = new Properties();
-
+        
+        // 所有属性的描述
+        // metadata.broker.list: broker列表,格式如例子所示
+        // serializer.class: 执行序列化的类,可以自定义该类,默认:kafka.serializer.DefaultEncoder
+        // producer.typ: async或sync, 指定为异步方式或同步方式,默认为sync
+        // request.required.acks:   0: producer不等待ack
+        //                          1: 主副本接受消息,就返回ack
+        //                          -1: 所有副本同步完成,才返回ack
+        // key.serializer.class: key的序列化器,默认同serializer.class
+        // partitioner.class: 分区器,参看本例子com.skyfree.kafka.partitioner.SimplePartitioner,
+        //                        默认为:kafka.producer.DefaultPartitioner
+        // compression.codec: none,gzip, snappy 指定消息的压缩方式,默认为none
+        // batch.num.messages: 如果使用异步方式,producer收集到这么多消息后,才会发送出去
+        // queue.buffer.ms: 如果使用异步方式,producer等待时间超过这么多秒,才会发送消息,与batch.num.messages是满足谁都可以的关系.
+        
         // broker list
         props.put("metadata.broker.list", brokers);
 
