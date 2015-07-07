@@ -23,6 +23,21 @@ public class SimpleConsumer implements Closeable {
     private ConsumerConfig createConsumerConfig(String zookeeper, String groupId) {
         Properties props = new Properties();
 
+        // group.id: 消费组名称,要保证唯一性
+        // consumer.id: 用于识别consumer,如果没有指定,kafka会自动指定
+        // zookeeper.connect: 连接的zookeeper地址
+        // client.id: 客户端id,同group.id
+        // zookeeper.session.timeout.ms: zookeeper会话超时时间,默认6000ms
+        // zookeeper.connection.timeout.ms: 建立连接的最大超时时间,默认6000ms
+        // zookeeper.sync.time.ms: zookeeper leader与follower同步的最大时间,默认2000ms
+        // auto.commit.enable: 启用周期性提交消息的offset给zookeeper,默认为true
+        // auto.commit.interval.ms: 多久向zookeeper提交一个offset, 默认60 * 1000 ms
+        // auto.offset.reset: 
+        //        largest: 最大的offset (默认值)
+        //        smallest:最小的offset
+        //        anything: 抛出异常
+        // consumer.timeout.ms: consumer等待多少毫秒后,如果没有收到消息,抛出异常,默认为-1
+
         props.put("zookeeper.connect", zookeeper);
         props.put("group.id", groupId);
         props.put("zookeeper.session.timeout.ms", "500");
