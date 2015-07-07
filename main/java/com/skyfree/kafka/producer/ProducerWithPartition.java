@@ -56,7 +56,7 @@ public class ProducerWithPartition implements Closeable {
 
             String message = accessTime + ",kafka.apache.org," + clientIP;
             System.out.println(message);
-            producer.publishMessage("skyfree_test", clientIP, message);
+            producer.publishMessage("skyfree_test1", clientIP, message);
         }
 
         producer.close();
